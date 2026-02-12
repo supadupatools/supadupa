@@ -8,13 +8,23 @@ export const SocialLinks = ({ isDarkMode }: SocialLinksProps) => {
   return (
     <div className="box-border caret-transparent -ml-2 flex flex-row items-center gap-1.5">
       <a
+        href="mailto:hello@supadupa.tools"
+        className="box-border caret-transparent leading-[17.1px] p-0.5 hover:text-zinc-900 hover:border-b-zinc-900"
+      >
+        <img
+          src={`${baseUrl}images/social/icon-email.svg`}
+          alt="Icon"
+          className={`box-border caret-transparent h-6 w-6 ${isDarkMode ? "invert" : ""}`}
+        />
+      </a>
+      <a
         href="https://instagram.com/supadupatools"
         className="box-border caret-transparent leading-[17.1px] p-0.5 hover:text-zinc-900 hover:border-b-zinc-900"
       >
         <img
           src={`${baseUrl}images/social/icon-instagram.svg`}
           alt="Icon"
-          className={`box-border caret-transparent h-[30px] w-[30px] ${isDarkMode ? "invert" : ""}`}
+          className={`box-border caret-transparent h-6 w-6 ${isDarkMode ? "invert" : ""}`}
         />
       </a>
       <a
@@ -24,27 +34,17 @@ export const SocialLinks = ({ isDarkMode }: SocialLinksProps) => {
         <img
           src={`${baseUrl}images/social/icon-3.svg`}
           alt="Icon"
-          className={`box-border caret-transparent h-[30px] w-[30px] ${isDarkMode ? "invert" : ""}`}
+          className={`box-border caret-transparent h-6 w-6 ${isDarkMode ? "invert" : ""}`}
         />
       </a>
       <a
-        href="https://github.com/supdupatools"
+        href="https://github.com/supadupatools"
         className="box-border caret-transparent leading-[17.1px] p-0.5 hover:text-zinc-900 hover:border-b-zinc-900"
       >
         <img
           src={`${baseUrl}images/social/icon-github.svg`}
           alt="Icon"
-          className={`box-border caret-transparent h-[30px] w-[30px] ${isDarkMode ? "invert" : ""}`}
-        />
-      </a>
-      <a
-        href="mailto:hello@supadupa.tools"
-        className="box-border caret-transparent leading-[17.1px] p-0.5 hover:text-zinc-900 hover:border-b-zinc-900"
-      >
-        <img
-          src={`${baseUrl}images/social/icon-email.svg`}
-          alt="Icon"
-          className={`box-border caret-transparent h-[30px] w-[30px] ${isDarkMode ? "invert" : ""}`}
+          className={`box-border caret-transparent h-6 w-6 ${isDarkMode ? "invert" : ""}`}
         />
       </a>
     </div>

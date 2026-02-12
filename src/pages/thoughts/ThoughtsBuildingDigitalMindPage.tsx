@@ -17,7 +17,7 @@ export const ThoughtsBuildingDigitalMindPage = ({ isDarkMode }: ThoughtsBuilding
           className="box-border caret-transparent leading-[17.1px] hover:text-zinc-900 hover:border-b-zinc-900 hover:border-l-neutral-500 hover:border-r-neutral-500 hover:border-t-neutral-500"
         >
           <img
-            src={isDarkMode ? `${baseUrl}images/supa-dupa-logo-darkmode.png` : `${baseUrl}images/supadupa-color-a.png`}
+            src={isDarkMode ? `${baseUrl}images/supadupa-white.png` : `${baseUrl}images/supadupa-color.png`}
             alt="Supa Dupa logo"
             className="box-border caret-transparent -ml-1 h-10 w-auto"
           />
