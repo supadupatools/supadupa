@@ -53,7 +53,7 @@ export const ContentWrapper = ({ isDarkMode }: ContentWrapperProps) => {
                 butta
               </div>
               <div className="text-neutral-500 text-[14.4px] box-border caret-transparent max-w-full text-ellipsis lowercase text-nowrap overflow-hidden dark:text-zinc-200">
-                cleans up file chaos
+                clean up file chaos
               </div>
             </div>
             <div className="box-border caret-transparent block leading-[17.1px] max-w-full opacity-90 -ml-2 mr-auto p-2 rounded-xl hover:text-zinc-900 hover:bg-black/0 hover:border-b-zinc-900 hover:border-l-neutral-500 hover:border-r-neutral-500 hover:border-t-neutral-500">
@@ -77,7 +77,7 @@ export const ContentWrapper = ({ isDarkMode }: ContentWrapperProps) => {
                 billydoo
               </div>
               <div className="text-neutral-500 text-[14.4px] box-border caret-transparent max-w-full text-ellipsis lowercase text-nowrap overflow-hidden dark:text-zinc-200">
-                a professional, rounded font family
+                see what&#39;s being read around you
               </div>
             </div>
           </div>
@@ -90,10 +90,10 @@ export const ContentWrapper = ({ isDarkMode }: ContentWrapperProps) => {
               className="box-border caret-transparent block leading-[17.1px] max-w-full opacity-90 -ml-2 mr-auto p-2 rounded-xl hover:text-zinc-900 hover:bg-black/0 hover:border-b-zinc-900 hover:border-l-neutral-500 hover:border-r-neutral-500 hover:border-t-neutral-500"
             >
               <div className="text-zinc-800 font-medium box-border caret-transparent lowercase mb-1 dark:text-white">
-                notion template
+                notion templates
               </div>
               <div className="text-neutral-500 text-[14.4px] box-border caret-transparent max-w-full text-ellipsis lowercase text-nowrap overflow-hidden dark:text-zinc-200">
-                overly complicated financial tracker
+                overly complicated trackers
               </div>
             </a>
             <a
