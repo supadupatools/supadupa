@@ -12,9 +12,9 @@ export const SocialLinks = ({ isDarkMode }: SocialLinksProps) => {
         className="box-border caret-transparent leading-[17.1px] p-0.5 hover:text-zinc-900 hover:border-b-zinc-900"
       >
         <img
-          src={`${baseUrl}images/social/icon-email.svg`}
+          src={`${baseUrl}images/social/Mail.png`}
           alt="Icon"
-          className={`box-border caret-transparent h-6 w-6 ${isDarkMode ? "invert" : ""}`}
+          className={`box-border caret-transparent h-8 w-8 ${isDarkMode ? "invert" : ""}`}
         />
       </a>
       <a
@@ -22,9 +22,9 @@ export const SocialLinks = ({ isDarkMode }: SocialLinksProps) => {
         className="box-border caret-transparent leading-[17.1px] p-0.5 hover:text-zinc-900 hover:border-b-zinc-900"
       >
         <img
-          src={`${baseUrl}images/social/icon-instagram.svg`}
+          src={`${baseUrl}images/social/Instagram.png`}
           alt="Icon"
-          className={`box-border caret-transparent h-6 w-6 ${isDarkMode ? "invert" : ""}`}
+          className={`box-border caret-transparent h-8 w-8 ${isDarkMode ? "invert" : ""}`}
         />
       </a>
       <a
@@ -32,9 +32,9 @@ export const SocialLinks = ({ isDarkMode }: SocialLinksProps) => {
         className="box-border caret-transparent leading-[17.1px] p-0.5 hover:text-zinc-900 hover:border-b-zinc-900"
       >
         <img
-          src={`${baseUrl}images/social/icon-3.svg`}
+          src={`${baseUrl}images/social/Linkedin.png`}
           alt="Icon"
-          className={`box-border caret-transparent h-6 w-6 ${isDarkMode ? "invert" : ""}`}
+          className={`box-border caret-transparent h-8 w-8 ${isDarkMode ? "invert" : ""}`}
         />
       </a>
       <a
@@ -42,9 +42,9 @@ export const SocialLinks = ({ isDarkMode }: SocialLinksProps) => {
         className="box-border caret-transparent leading-[17.1px] p-0.5 hover:text-zinc-900 hover:border-b-zinc-900"
       >
         <img
-          src={`${baseUrl}images/social/icon-github.svg`}
+          src={`${baseUrl}images/social/Github.png`}
           alt="Icon"
-          className={`box-border caret-transparent h-6 w-6 ${isDarkMode ? "invert" : ""}`}
+          className={`box-border caret-transparent h-8 w-8 ${isDarkMode ? "invert" : ""}`}
         />
       </a>
     </div>
