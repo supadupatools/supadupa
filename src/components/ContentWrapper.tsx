@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { HoverPreviewLink } from "@/components/HoverPreviewLink";
 
 type ContentWrapperProps = {
@@ -5,6 +6,18 @@ type ContentWrapperProps = {
 };
 
 export const ContentWrapper = ({ isDarkMode }: ContentWrapperProps) => {
+  useEffect(() => {
+    const logoSources = [
+      "images/supadupa-logo.png",
+      "images/supa-dupa-logo-darkmode.png",
+    ];
+
+    logoSources.forEach((source) => {
+      const image = new Image();
+      image.src = source;
+    });
+  }, []);
+
   return (
     <div className="box-border caret-transparent max-w-[936px] ml-[14%] mr-[6%] mt-0 mb-[108px]">
       <section className="box-border caret-transparent">
