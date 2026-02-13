@@ -14,7 +14,7 @@ export const SocialLinks = ({ isDarkMode }: SocialLinksProps) => {
         <img
           src={`${baseUrl}images/social/Mail.png`}
           alt="Icon"
-          className={`box-border caret-transparent h-8 w-8 ${isDarkMode ? "invert" : ""}`}
+          className="box-border caret-transparent h-8 w-8"
         />
       </a>
       <a
@@ -24,7 +24,7 @@ export const SocialLinks = ({ isDarkMode }: SocialLinksProps) => {
         <img
           src={`${baseUrl}images/social/Instagram.png`}
           alt="Icon"
-          className={`box-border caret-transparent h-8 w-8 ${isDarkMode ? "invert" : ""}`}
+          className="box-border caret-transparent h-8 w-8"
         />
       </a>
       <a
@@ -34,7 +34,7 @@ export const SocialLinks = ({ isDarkMode }: SocialLinksProps) => {
         <img
           src={`${baseUrl}images/social/Linkedin.png`}
           alt="Icon"
-          className={`box-border caret-transparent h-8 w-8 ${isDarkMode ? "invert" : ""}`}
+          className="box-border caret-transparent h-8 w-8"
         />
       </a>
       <a
@@ -44,7 +44,7 @@ export const SocialLinks = ({ isDarkMode }: SocialLinksProps) => {
         <img
           src={`${baseUrl}images/social/Github.png`}
           alt="Icon"
-          className={`box-border caret-transparent h-8 w-8 ${isDarkMode ? "invert" : ""}`}
+          className="box-border caret-transparent h-8 w-8"
         />
       </a>
     </div>
