@@ -16,9 +16,31 @@ export const HoverPreviewLink = ({
   children,
 }: HoverPreviewLinkProps) => {
   const baseUrl = import.meta.env.BASE_URL;
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.altKey ||
+      event.ctrlKey ||
+      event.shiftKey
+    ) {
+      return;
+    }
+
+    const nextUrl = new URL(href, window.location.href);
+    if (nextUrl.origin !== window.location.origin) {
+      return;
+    }
+
+    event.preventDefault();
+    window.history.pushState({}, "", `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`);
+    window.dispatchEvent(new PopStateEvent("popstate"));
+    window.scrollTo({ top: 0, behavior: "auto" });
+  };
 
   return (
-    <a href={href} className={`group relative z-0 hover:z-[70] focus-visible:z-[70] ${className}`}>
+    <a href={href} onClick={handleClick} className={`group relative z-0 hover:z-[70] focus-visible:z-[70] ${className}`}>
       {children}
 
       <div className="pointer-events-none absolute left-0 top-[calc(100%+10px)] z-50 hidden w-[300px] opacity-0 transition duration-200 group-hover:opacity-100 xl:block">

@@ -6,7 +6,9 @@ import { ThoughtsRaefordResearchPage } from "@/pages/thoughts/ThoughtsRaefordRes
 import { ThoughtsTemplatePage } from "@/pages/thoughts/ThoughtsTemplatePage";
 
 export const App = () => {
+  const normalizePath = (path: string) => path.replace(/\/+$/, "") || "/";
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [currentPath, setCurrentPath] = useState(() => normalizePath(window.location.pathname));
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("theme");
@@ -25,7 +27,17 @@ export const App = () => {
     window.localStorage.setItem("theme", "light");
   }, [isDarkMode]);
 
-  const currentPath = window.location.pathname.replace(/\/+$/, "");
+  useEffect(() => {
+    const onPopState = () => {
+      setCurrentPath(normalizePath(window.location.pathname));
+    };
+
+    window.addEventListener("popstate", onPopState);
+    return () => {
+      window.removeEventListener("popstate", onPopState);
+    };
+  }, []);
+
   const thoughtPageByPath: Array<[string, JSX.Element]> = [
     ["/thoughts/building-a-digital-mind", <ThoughtsBuildingDigitalMindPage isDarkMode={isDarkMode} />],
     ["/thoughts/thoughts-template", <ThoughtsTemplatePage isDarkMode={isDarkMode} />],
