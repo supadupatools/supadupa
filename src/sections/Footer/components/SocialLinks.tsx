@@ -14,7 +14,7 @@ export const SocialLinks = ({ isDarkMode }: SocialLinksProps) => {
         <img
           src={`${baseUrl}images/social/Mail.png`}
           alt="Icon"
-          className="box-border caret-transparent h-8 w-8"
+          className="box-border caret-transparent h-9 w-9"
         />
       </a>
       <a
@@ -24,7 +24,7 @@ export const SocialLinks = ({ isDarkMode }: SocialLinksProps) => {
         <img
           src={`${baseUrl}images/social/Instagram.png`}
           alt="Icon"
-          className="box-border caret-transparent h-8 w-8"
+          className="box-border caret-transparent h-9 w-9"
         />
       </a>
       <a
@@ -34,7 +34,7 @@ export const SocialLinks = ({ isDarkMode }: SocialLinksProps) => {
         <img
           src={`${baseUrl}images/social/Linkedin.png`}
           alt="Icon"
-          className="box-border caret-transparent h-8 w-8"
+          className="box-border caret-transparent h-9 w-9"
         />
       </a>
       <a
@@ -44,7 +44,7 @@ export const SocialLinks = ({ isDarkMode }: SocialLinksProps) => {
         <img
           src={`${baseUrl}images/social/Github.png`}
           alt="Icon"
-          className="box-border caret-transparent h-8 w-8"
+          className="box-border caret-transparent h-9 w-9"
         />
       </a>
     </div>

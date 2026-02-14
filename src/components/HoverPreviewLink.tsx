@@ -18,11 +18,11 @@ export const HoverPreviewLink = ({
   const baseUrl = import.meta.env.BASE_URL;
 
   return (
-    <a href={href} className={`group relative ${className}`}>
+    <a href={href} className={`group relative z-0 hover:z-[70] focus-visible:z-[70] ${className}`}>
       {children}
 
       <div className="pointer-events-none absolute left-0 top-[calc(100%+10px)] z-50 hidden w-[300px] opacity-0 transition duration-200 group-hover:opacity-100 xl:block">
-        <div className="overflow-hidden rounded-2xl border border-zinc-700/70 bg-zinc-950/95 shadow-[0_20px_45px_rgba(0,0,0,0.4)] backdrop-blur-sm">
+        <div className="overflow-hidden rounded-2xl border border-zinc-700/70 bg-zinc-950 shadow-[0_20px_45px_rgba(0,0,0,0.4)]">
           <div className="bg-zinc-200 p-3">
             <img
               src={`${baseUrl}${previewImage}`}

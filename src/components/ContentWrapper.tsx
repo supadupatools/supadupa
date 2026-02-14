@@ -6,6 +6,8 @@ type ContentWrapperProps = {
 };
 
 export const ContentWrapper = ({ isDarkMode }: ContentWrapperProps) => {
+  const baseUrl = import.meta.env.BASE_URL;
+
   useEffect(() => {
     const logoSources = [
       "images/supadupa-logo.png",
@@ -14,9 +16,10 @@ export const ContentWrapper = ({ isDarkMode }: ContentWrapperProps) => {
 
     logoSources.forEach((source) => {
       const image = new Image();
-      image.src = source;
+      image.src = `${baseUrl}${source}`;
+      image.decode?.().catch(() => undefined);
     });
-  }, []);
+  }, [baseUrl]);
 
   return (
     <div className="box-border caret-transparent max-w-[936px] ml-[14%] mr-[6%] mt-0 mb-[108px]">
@@ -27,9 +30,12 @@ export const ContentWrapper = ({ isDarkMode }: ContentWrapperProps) => {
               alt="Supa Dupa logo"
               src={
                 isDarkMode
-                  ? "images/supa-dupa-logo-darkmode.png"
-                  : "images/supadupa-logo.png"
+                  ? `${baseUrl}images/supa-dupa-logo-darkmode.png`
+                  : `${baseUrl}images/supadupa-logo.png`
               }
+              loading="eager"
+              decoding="sync"
+              fetchPriority="high"
               className="box-border h-[420px] max-w-full w-full object-contain"
             />
           </div>
@@ -40,7 +46,7 @@ export const ContentWrapper = ({ isDarkMode }: ContentWrapperProps) => {
               Thoughts
             </h2>
             <HoverPreviewLink
-              href="beginnings"
+              href={`${baseUrl}beginnings`}
               previewImage="images/supadupa-color.png"
               previewTitle="Sharper tools, smoother days."
               previewDescription="A short note on why we build small, useful tools that remove friction."
@@ -51,6 +57,20 @@ export const ContentWrapper = ({ isDarkMode }: ContentWrapperProps) => {
               </div>
               <div className="text-neutral-500 text-[14.4px] box-border caret-transparent max-w-full text-ellipsis lowercase text-nowrap overflow-hidden dark:text-zinc-200">
                 small-but-supa software products
+              </div>
+            </HoverPreviewLink>
+            <HoverPreviewLink
+              href={`${baseUrl}thoughts/raeford-research`}
+              previewImage="images/raeford-astro-logo.png"
+              previewTitle="Raeford Research"
+              previewDescription="a drive to discover"
+              className="box-border caret-transparent block leading-[17.1px] max-w-full opacity-90 -ml-2 mr-auto p-2 rounded-xl hover:text-zinc-900 hover:bg-black/0 hover:border-b-zinc-900 hover:border-l-neutral-500 hover:border-r-neutral-500 hover:border-t-neutral-500 dark:hover:text-white"
+            >
+              <div className="text-zinc-800 font-medium box-border caret-transparent lowercase mb-1 dark:text-white">
+                raeford research
+              </div>
+              <div className="text-neutral-500 text-[14.4px] box-border caret-transparent max-w-full text-ellipsis lowercase text-nowrap overflow-hidden dark:text-zinc-200">
+                a drive to discover
               </div>
             </HoverPreviewLink>
           </div>

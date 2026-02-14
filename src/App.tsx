@@ -2,6 +2,8 @@ import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { PageContainer } from "@/components/PageContainer";
 import { ThoughtsBuildingDigitalMindPage } from "@/pages/thoughts/ThoughtsBuildingDigitalMindPage";
+import { ThoughtsRaefordResearchPage } from "@/pages/thoughts/ThoughtsRaefordResearchPage";
+import { ThoughtsTemplatePage } from "@/pages/thoughts/ThoughtsTemplatePage";
 
 export const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -23,9 +25,15 @@ export const App = () => {
     window.localStorage.setItem("theme", "light");
   }, [isDarkMode]);
 
-  const isThoughtPage =
-    window.location.pathname.endsWith("/beginnings") ||
-    window.location.pathname.endsWith("/thoughts/building-a-digital-mind");
+  const currentPath = window.location.pathname.replace(/\/+$/, "");
+  const thoughtPageByPath: Record<string, JSX.Element> = {
+    "/beginnings": <ThoughtsBuildingDigitalMindPage isDarkMode={isDarkMode} />,
+    "/thoughts/building-a-digital-mind": <ThoughtsBuildingDigitalMindPage isDarkMode={isDarkMode} />,
+    "/thoughts/template": <ThoughtsTemplatePage isDarkMode={isDarkMode} />,
+    "/thoughts/thoughts-template": <ThoughtsTemplatePage isDarkMode={isDarkMode} />,
+    "/thoughts/raeford-research": <ThoughtsRaefordResearchPage isDarkMode={isDarkMode} />,
+  };
+  const currentThoughtPage = thoughtPageByPath[currentPath];
 
   return (
     <body className="text-zinc-900 text-lg not-italic proportional-nums font-normal accent-auto bg-gray-100 box-border caret-transparent block tracking-[-0.27px] leading-[28.8px] list-outside list-disc pointer-events-auto text-start indent-[0px] normal-case visible border-separate font-sn_pro dark:bg-[#424530] dark:text-white">
@@ -37,11 +45,7 @@ export const App = () => {
       >
         {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
       </button>
-      {isThoughtPage ? (
-        <ThoughtsBuildingDigitalMindPage isDarkMode={isDarkMode} />
-      ) : (
-        <PageContainer isDarkMode={isDarkMode} />
-      )}
+      {currentThoughtPage ?? <PageContainer isDarkMode={isDarkMode} />}
       <div className="box-border caret-transparent"></div>
     </body>
   );
