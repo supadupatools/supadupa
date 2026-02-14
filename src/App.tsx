@@ -26,14 +26,16 @@ export const App = () => {
   }, [isDarkMode]);
 
   const currentPath = window.location.pathname.replace(/\/+$/, "");
-  const thoughtPageByPath: Record<string, JSX.Element> = {
-    "/beginnings": <ThoughtsBuildingDigitalMindPage isDarkMode={isDarkMode} />,
-    "/thoughts/building-a-digital-mind": <ThoughtsBuildingDigitalMindPage isDarkMode={isDarkMode} />,
-    "/thoughts/template": <ThoughtsTemplatePage isDarkMode={isDarkMode} />,
-    "/thoughts/thoughts-template": <ThoughtsTemplatePage isDarkMode={isDarkMode} />,
-    "/thoughts/raeford-research": <ThoughtsRaefordResearchPage isDarkMode={isDarkMode} />,
-  };
-  const currentThoughtPage = thoughtPageByPath[currentPath];
+  const thoughtPageByPath: Array<[string, JSX.Element]> = [
+    ["/thoughts/building-a-digital-mind", <ThoughtsBuildingDigitalMindPage isDarkMode={isDarkMode} />],
+    ["/thoughts/thoughts-template", <ThoughtsTemplatePage isDarkMode={isDarkMode} />],
+    ["/thoughts/template", <ThoughtsTemplatePage isDarkMode={isDarkMode} />],
+    ["/thoughts/raeford-research", <ThoughtsRaefordResearchPage isDarkMode={isDarkMode} />],
+    ["/beginnings", <ThoughtsBuildingDigitalMindPage isDarkMode={isDarkMode} />],
+  ];
+  const currentThoughtPage = thoughtPageByPath.find(([routePath]) =>
+    currentPath === routePath || currentPath.endsWith(routePath),
+  )?.[1];
 
   return (
     <body className="text-zinc-900 text-lg not-italic proportional-nums font-normal accent-auto bg-gray-100 box-border caret-transparent block tracking-[-0.27px] leading-[28.8px] list-outside list-disc pointer-events-auto text-start indent-[0px] normal-case visible border-separate font-sn_pro dark:bg-[#424530] dark:text-white">
