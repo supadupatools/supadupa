@@ -7,8 +7,16 @@ import { ThoughtsTemplatePage } from "@/pages/thoughts/ThoughtsTemplatePage";
 
 export const App = () => {
   const normalizePath = (path: string) => path.replace(/\/+$/, "") || "/";
+  const getRoutePath = () => {
+    const hashPath = window.location.hash.replace(/^#/, "");
+    if (hashPath.startsWith("/")) {
+      return normalizePath(hashPath);
+    }
+
+    return normalizePath(window.location.pathname);
+  };
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [currentPath, setCurrentPath] = useState(() => normalizePath(window.location.pathname));
+  const [currentPath, setCurrentPath] = useState(getRoutePath);
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("theme");
@@ -28,13 +36,15 @@ export const App = () => {
   }, [isDarkMode]);
 
   useEffect(() => {
-    const onPopState = () => {
-      setCurrentPath(normalizePath(window.location.pathname));
+    const updatePath = () => {
+      setCurrentPath(getRoutePath());
     };
 
-    window.addEventListener("popstate", onPopState);
+    window.addEventListener("popstate", updatePath);
+    window.addEventListener("hashchange", updatePath);
     return () => {
-      window.removeEventListener("popstate", onPopState);
+      window.removeEventListener("popstate", updatePath);
+      window.removeEventListener("hashchange", updatePath);
     };
   }, []);
 

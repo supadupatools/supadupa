@@ -46,7 +46,7 @@ export const ContentWrapper = ({ isDarkMode }: ContentWrapperProps) => {
               Thoughts
             </h2>
             <HoverPreviewLink
-              href={`${baseUrl}beginnings`}
+              href={`${baseUrl}#/beginnings`}
               previewImage="images/supadupa-color.png"
               previewTitle="Sharper tools, smoother days."
               previewDescription="A short note on why we build small, useful tools that remove friction."
@@ -60,7 +60,7 @@ export const ContentWrapper = ({ isDarkMode }: ContentWrapperProps) => {
               </div>
             </HoverPreviewLink>
             <HoverPreviewLink
-              href={`${baseUrl}thoughts/raeford-research`}
+              href={`${baseUrl}#/thoughts/raeford-research`}
               previewImage="images/raeford-astro-logo.png"
               previewTitle="Raeford Research"
               previewDescription="a drive to discover"
