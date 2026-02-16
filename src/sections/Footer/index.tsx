@@ -8,7 +8,7 @@ export const Footer = ({ isDarkMode }: FooterProps) => {
   const baseUrl = import.meta.env.BASE_URL;
 
   return (
-    <footer className="text-neutral-500 text-[14.4px] box-border caret-transparent leading-[23.04px] max-w-[648px] mx-[8%] my-[72px] md:mb-[108px] md:mx-[14%] dark:text-zinc-200">
+    <footer className="text-neutral-500 text-[14.4px] box-border caret-transparent leading-[23.04px] max-w-[648px] mx-[8%] mt-8 mb-[72px] md:mx-[14%] md:mt-10 md:mb-[108px] dark:text-zinc-200">
       <div className="box-border caret-transparent mb-2.5">
         <SocialLinks isDarkMode={isDarkMode} />
       </div>

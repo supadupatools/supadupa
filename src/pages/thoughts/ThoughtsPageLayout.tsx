@@ -28,7 +28,7 @@ export const ThoughtsPageLayout = ({ isDarkMode, children }: ThoughtsPageLayoutP
         {children}
       </main>
       <hr className="text-zinc-500 border-b-zinc-500 border-l-zinc-500 border-r-zinc-500 border-t-zinc-300 box-border caret-transparent mx-[10%] border-b-0 border-x-0" />
-      <footer className="text-neutral-500 text-[14.4px] box-border caret-transparent leading-[23.04px] max-w-[648px] mx-[8%] my-[72px] md:mb-[108px] md:mx-[14%]">
+      <footer className="text-neutral-500 text-[14.4px] box-border caret-transparent leading-[23.04px] max-w-[648px] mx-[8%] mt-8 mb-[72px] md:mx-[14%] md:mt-10 md:mb-[108px]">
         <div className="box-border caret-transparent mb-2.5">
           <SocialLinks isDarkMode={isDarkMode} />
         </div>
