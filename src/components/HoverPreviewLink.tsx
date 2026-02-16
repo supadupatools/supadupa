@@ -1,6 +1,7 @@
 type HoverPreviewLinkProps = {
   href?: string;
   previewImage?: string;
+  previewOverlayImage?: string;
   previewTitle: string;
   previewDescription: string;
   previewVariant?: "image" | "production";
@@ -11,6 +12,7 @@ type HoverPreviewLinkProps = {
 export const HoverPreviewLink = ({
   href,
   previewImage,
+  previewOverlayImage,
   previewTitle,
   previewDescription,
   previewVariant = "image",
@@ -42,11 +44,21 @@ export const HoverPreviewLink = ({
       ) : (
         <div className="overflow-hidden rounded-2xl border border-zinc-700/70 bg-zinc-950 shadow-[0_20px_45px_rgba(0,0,0,0.4)]">
           <div className="bg-zinc-200 p-3">
-            <img
-              src={`${baseUrl}${previewImage ?? ""}`}
-              alt={previewTitle}
-              className="h-32 w-full rounded-xl border border-zinc-300 object-cover shadow-[0_8px_20px_rgba(0,0,0,0.18)]"
-            />
+            <div className="relative h-32 w-full">
+              <img
+                src={`${baseUrl}${previewImage ?? ""}`}
+                alt={previewTitle}
+                className="h-full w-full rounded-xl border border-zinc-300 object-cover shadow-[0_8px_20px_rgba(0,0,0,0.18)]"
+              />
+              {previewOverlayImage ? (
+                <img
+                  src={`${baseUrl}${previewOverlayImage}`}
+                  alt=""
+                  aria-hidden="true"
+                  className="pointer-events-none absolute left-1/2 top-1/2 h-auto max-h-16 w-auto max-w-[78%] -translate-x-1/2 -translate-y-1/2 object-contain drop-shadow-[0_8px_18px_rgba(0,0,0,0.35)]"
+                />
+              ) : null}
+            </div>
           </div>
           <div className="border-t border-zinc-700/70 bg-zinc-950 px-4 py-3">
             <div className="text-[18px] font-medium leading-[1.2] text-zinc-100">

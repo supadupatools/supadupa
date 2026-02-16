@@ -86,7 +86,8 @@ export const ContentWrapper = ({ isDarkMode }: ContentWrapperProps) => {
             </h2>
             <HoverPreviewLink
               href={`${baseUrl}#/beginnings`}
-              previewImage="images/supadupa-color.png"
+              previewImage="images/mountains_gradient_1920x1080_300dpi.png"
+              previewOverlayImage="images/supadupa-logo-straight.png"
               previewTitle="Sharper tools, smoother days."
               previewDescription="A short note on why we build small, useful tools that remove friction."
               className="box-border caret-transparent block leading-[17.1px] max-w-full opacity-90 -ml-2 mr-auto p-2 rounded-xl hover:text-zinc-900 hover:bg-black/0 hover:border-b-zinc-900 hover:border-l-neutral-500 hover:border-r-neutral-500 hover:border-t-neutral-500 dark:hover:text-white"
