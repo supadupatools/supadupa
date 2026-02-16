@@ -80,4 +80,40 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  .app-background {
+    background-color: #f3f4f6;
+    background-image:
+      radial-gradient(circle at 14% 18%, rgba(255, 255, 255, 0.9), transparent 46%),
+      radial-gradient(circle at 84% 10%, rgba(217, 229, 255, 0.45), transparent 42%),
+      radial-gradient(circle at 52% 88%, rgba(255, 255, 255, 0.5), transparent 44%),
+      linear-gradient(155deg, rgba(255, 255, 255, 0.8), rgba(229, 234, 242, 0.9));
+  }
+
+  .dark .app-background {
+    background-color: #424530;
+    background-image:
+      radial-gradient(circle at 18% 22%, rgba(123, 138, 109, 0.2), transparent 42%),
+      radial-gradient(circle at 84% 14%, rgba(32, 39, 27, 0.4), transparent 45%),
+      radial-gradient(circle at 55% 90%, rgba(98, 111, 80, 0.14), transparent 44%),
+      linear-gradient(160deg, rgba(72, 76, 52, 0.94), rgba(45, 47, 34, 0.96));
+  }
+}
+
+@layer utilities {
+  @keyframes preview-blink {
+    0%,
+    10%,
+    20%,
+    54%,
+    64%,
+    100% {
+      transform: scaleY(1);
+    }
+
+    14%,
+    58% {
+      transform: scaleY(0.26);
+    }
+  }
 }

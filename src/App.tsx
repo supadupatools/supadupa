@@ -1,6 +1,8 @@
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { PageContainer } from "@/components/PageContainer";
+import { PrivacyPolicyPage } from "@/pages/legal/PrivacyPolicyPage";
+import { TermsOfServicePage } from "@/pages/legal/TermsOfServicePage";
 import { ThoughtsBuildingDigitalMindPage } from "@/pages/thoughts/ThoughtsBuildingDigitalMindPage";
 import { ThoughtsRaefordResearchPage } from "@/pages/thoughts/ThoughtsRaefordResearchPage";
 import { ThoughtsTemplatePage } from "@/pages/thoughts/ThoughtsTemplatePage";
@@ -54,13 +56,15 @@ export const App = () => {
     ["/thoughts/template", <ThoughtsTemplatePage isDarkMode={isDarkMode} />],
     ["/thoughts/raeford-research", <ThoughtsRaefordResearchPage isDarkMode={isDarkMode} />],
     ["/beginnings", <ThoughtsBuildingDigitalMindPage isDarkMode={isDarkMode} />],
+    ["/terms", <TermsOfServicePage isDarkMode={isDarkMode} />],
+    ["/privacy", <PrivacyPolicyPage isDarkMode={isDarkMode} />],
   ];
   const currentThoughtPage = thoughtPageByPath.find(([routePath]) =>
     currentPath === routePath || currentPath.endsWith(routePath),
   )?.[1];
 
   return (
-    <body className="text-zinc-900 text-lg not-italic proportional-nums font-normal accent-auto bg-gray-100 box-border caret-transparent block tracking-[-0.27px] leading-[28.8px] list-outside list-disc pointer-events-auto text-start indent-[0px] normal-case visible border-separate font-sn_pro dark:bg-[#424530] dark:text-white">
+    <div className="min-h-screen app-background text-zinc-900 text-lg not-italic proportional-nums font-normal accent-auto box-border caret-transparent block tracking-[-0.27px] leading-[28.8px] list-outside list-disc pointer-events-auto text-start indent-[0px] normal-case visible border-separate font-sn_pro dark:text-white">
       <button
         type="button"
         onClick={() => setIsDarkMode((current) => !current)}
@@ -71,6 +75,6 @@ export const App = () => {
       </button>
       {currentThoughtPage ?? <PageContainer isDarkMode={isDarkMode} />}
       <div className="box-border caret-transparent"></div>
-    </body>
+    </div>
   );
 };
