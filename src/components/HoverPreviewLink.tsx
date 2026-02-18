@@ -2,6 +2,7 @@ type HoverPreviewLinkProps = {
   href?: string;
   previewImage?: string;
   previewOverlayImage?: string;
+  previewOverlayClassName?: string;
   previewTitle: string;
   previewDescription: string;
   previewVariant?: "image" | "production";
@@ -13,6 +14,7 @@ export const HoverPreviewLink = ({
   href,
   previewImage,
   previewOverlayImage,
+  previewOverlayClassName,
   previewTitle,
   previewDescription,
   previewVariant = "image",
@@ -55,7 +57,7 @@ export const HoverPreviewLink = ({
                   src={`${baseUrl}${previewOverlayImage}`}
                   alt=""
                   aria-hidden="true"
-                  className="pointer-events-none absolute left-1/2 top-1/2 h-auto max-h-16 w-auto max-w-[78%] -translate-x-1/2 -translate-y-1/2 object-contain drop-shadow-[0_8px_18px_rgba(0,0,0,0.35)]"
+                  className={`pointer-events-none absolute left-1/2 top-1/2 h-auto max-h-16 w-auto max-w-[78%] -translate-x-1/2 -translate-y-1/2 object-contain drop-shadow-[0_8px_18px_rgba(0,0,0,0.35)] ${previewOverlayClassName ?? ""}`}
                 />
               ) : null}
             </div>

@@ -17,11 +17,16 @@ export const App = () => {
 
     return normalizePath(window.location.pathname);
   };
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [currentPath, setCurrentPath] = useState(getRoutePath);
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("theme");
+    if (savedTheme === null) {
+      setIsDarkMode(true);
+      return;
+    }
+
     setIsDarkMode(savedTheme === "dark");
   }, []);
 
