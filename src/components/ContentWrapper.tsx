@@ -10,6 +10,8 @@ const toolItems = [
     name: "certden",
     description: "data-driven certification exam prep platform",
     href: "https://www.certden.app",
+    previewTitle: "CertDen",
+    previewDescription: "Now live at www.certden.app.",
   },
   {
     name: "butta",
@@ -125,8 +127,11 @@ export const ContentWrapper = ({ isDarkMode }: ContentWrapperProps) => {
                 key={item.name}
                 href={item.href}
                 previewVariant="production"
-                previewTitle="In Production"
-                previewDescription={`${item.name} is in production. Public link coming soon.`}
+                previewTitle={item.previewTitle ?? "In Production"}
+                previewDescription={
+                  item.previewDescription ??
+                  `${item.name} is in production. Public link coming soon.`
+                }
                 className="box-border caret-transparent block leading-[17.1px] max-w-full opacity-90 -ml-2 mr-auto p-2 rounded-xl hover:text-zinc-900 hover:bg-black/0 hover:border-b-zinc-900 hover:border-l-neutral-500 hover:border-r-neutral-500 hover:border-t-neutral-500 dark:hover:text-white"
               >
                 <div className="text-zinc-800 font-medium box-border caret-transparent lowercase mb-1 dark:text-white">
