@@ -9,6 +9,7 @@ const toolItems = [
   {
     name: "certden",
     description: "data-driven certification exam prep platform",
+    href: "https://www.certden.app",
   },
   {
     name: "butta",
@@ -122,6 +123,7 @@ export const ContentWrapper = ({ isDarkMode }: ContentWrapperProps) => {
             {toolItems.map((item) => (
               <HoverPreviewLink
                 key={item.name}
+                href={item.href}
                 previewVariant="production"
                 previewTitle="In Production"
                 previewDescription={`${item.name} is in production. Public link coming soon.`}
