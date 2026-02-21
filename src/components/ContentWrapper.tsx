@@ -10,6 +10,8 @@ const toolItems = [
     name: "certden",
     description: "data-driven certification exam prep platform",
     href: "https://www.certden.app",
+    previewVariant: "image",
+    previewImage: "images/certden_preview_card.png",
     previewTitle: "CertDen",
     previewDescription: "Now live at www.certden.app.",
   },
@@ -126,7 +128,8 @@ export const ContentWrapper = ({ isDarkMode }: ContentWrapperProps) => {
               <HoverPreviewLink
                 key={item.name}
                 href={item.href}
-                previewVariant="production"
+                previewVariant={item.previewVariant ?? "production"}
+                previewImage={item.previewImage}
                 previewTitle={item.previewTitle ?? "In Production"}
                 previewDescription={
                   item.previewDescription ??
